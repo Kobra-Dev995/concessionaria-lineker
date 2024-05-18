@@ -3,28 +3,24 @@ import Image from 'next/image';
 export default function Page() {
   return (
     <>
-      <header className='bg-slate-200 h-20 flex items-center justify-between px-4'>
-        <Image src='/unsplash_RukI4qZGlQs.png' width='70' height='70' />
-        <span className='text-lg font-semibold'> Archip</span>
-      </header>
-      <main className='overflow-hidden'>
+      <main className='overflow-hidden bg-stone-100 text-stone-900'>
         <section className='w-full'>
           <div className='w-full flex justify-end p-4'>
             <input type='text' placeholder='Pesquisar carro' />
           </div>
           <section className='flex flex-col gap-4 px-7 '>
             <div className='flex items-center justify-around text-xl border-2 border-slate-800/40 rounded-lg'>
-              <Image src='/destaque-v2 1.png' width='100' height='100' />
+              <Image src='/arancio-borealis 1 (1).png' width='100' height='100' alt='Carro 1'/>
               <span>BMW X6</span>
               <span>R$ 820.950</span>
             </div>
             <div className='py-4 flex items-center justify-around text-xl border-2 border-slate-800/40 rounded-lg'>
-              <Image src='/arancio-borealis 1.png' width='125' height='125' />
+              <Image src='/2517_4 1 (1).png' width='125' height='125' alt='Carro 2' />
               <span>BMW X6</span>
               <span>R$ 820.950</span>
             </div>
             <div className=' flex items-center justify-around text-xl border-2 border-slate-800/40 rounded-lg'>
-              <Image src='/2517_4 1.png' width='120' height='100' />
+              <Image src='/destaque-v2 1 (1).png' width='120' height='100' alt='Carro 3'/>
               <span>BMW X6</span>
               <span>R$ 820.950</span>
             </div>
@@ -33,7 +29,7 @@ export default function Page() {
 
         <section className='w-full flex flex-col items-center justify-center'>
           <span className='pt-4 text-xl'>Promoções</span>
-          <Image src='/Group 39.png' width='600' height='600' />
+          <Image src='/carroPromocao.png' width='600' height='600' alt='Promoção' loading='lazy' />
           <span className='underline text-base'>ver mais</span>
         </section>
 
