@@ -67,5 +67,3 @@ export default function LoginPage() {
   );
 
 }
-
-// testando o git pull tem que funcionar
