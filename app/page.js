@@ -66,5 +66,3 @@ export default function LoginPage() {
     </>
   );
 }
-
-// testando o git pull
