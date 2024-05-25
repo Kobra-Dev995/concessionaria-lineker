@@ -13,8 +13,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('daisyui'),
     require('rippleui'),
+    require('daisyui'),
     require('@sira-ui/tailwind')({
       prefix: 'sira-',
       excludedThemes: ['dark', 'light', 'whateverTheme'],

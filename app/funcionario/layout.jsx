@@ -8,7 +8,7 @@ export const metadata = {
 export default function LayoutFuncionario({ children }) {
   return (
     <html lang='pt-br'>
-      <body data-theme='light'>
+      <body>
         <Header/>
         {children}
         </body>

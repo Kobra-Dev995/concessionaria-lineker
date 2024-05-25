@@ -1,19 +1,19 @@
-'use client'
+'use client';
 
-import { useRouter } from "next/navigation"
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
-  const router = useRouter()
+  const router = useRouter();
 
   function handleFormSubmit(e) {
-    e.preventDefault()
-    
-    const emailUser = e.target[0].value
-    const senhaUser = e.target[1].value
+    e.preventDefault();
 
-    console.log('Email: ',emailUser,'\nSenha: ', senhaUser);
+    const emailUser = e.target[0].value;
+    const senhaUser = e.target[1].value;
 
-    router.replace('/funcionario/')
+    console.log('Email: ', emailUser, '\nSenha: ', senhaUser);
+
+    router.replace('/funcionario/');
   }
 
   return (
@@ -22,14 +22,15 @@ export default function LoginPage() {
         <div className='mx-auto flex w-full max-w-sm flex-col gap-6'>
           <div className='flex flex-col items-center'>
             <h1 className='text-4xl font-semibold text-zinc-200'>Sign In</h1>
-            <p className='text-sm text-stone-200 mt-2'>Sign in to access your account</p>
+            <p className='text-sm text-stone-200 mt-2'>
+              Faça login para acessar sua conta
+            </p>
           </div>
 
           <form className='form-group' onSubmit={handleFormSubmit}>
-
             <div className='form-field'>
-              <label className='form-label'>Email address</label>
-
+              <label className='form-label'>Endereço de Email</label>
+              
               <input
                 placeholder='Email'
                 type='email'
@@ -37,13 +38,11 @@ export default function LoginPage() {
                 className='input max-w-full'
               />
               <label className='form-label'>
-                <span className='form-label-alt'>
-                  Please enter a valid email.
-                </span>
+                <span className='form-label-alt'>Email válido.</span>
               </label>
             </div>
             <div className='form-field'>
-              <label className='form-label'>Password</label>
+              <label className='form-label'>Senha</label>
               <div className='form-control'>
                 <input
                   placeholder='Senha'
@@ -54,34 +53,36 @@ export default function LoginPage() {
               </div>
             </div>
             <div className='form-field'>
-              <div className='form-control justify-between'>
+              {/* <div className='form-control justify-between'>
                 
                 <label className='form-label'>
                   <a className='link link-underline-hover link-primary text-sm'>
                     Forgot your password?
                   </a>
                 </label>
-              </div>
+              </div> */}
             </div>
             <div className='form-field pt-5'>
               <div className='form-control justify-between'>
-                <button type='submit' className='daisy-btn daisy-btn-info w-full'>
+                <button
+                  type='submit'
+                  className='daisy-btn daisy-btn-info w-full'
+                >
                   Sign in
                 </button>
               </div>
             </div>
 
-            <div className='form-field'>
+            {/* <div className='form-field'>
               <div className='form-control justify-center'>
                 <a className='link link-underline-hover link-primary text-sm'>
                   Don't have an account yet? Sign up.
                 </a>
               </div>
-            </div>
+            </div> */}
           </form>
         </div>
       </main>
     </>
   );
-
 }
