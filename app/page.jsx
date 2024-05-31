@@ -21,34 +21,35 @@ export default function LoginPage() {
       <main className='flex flex-col h-screen w-screen items-center justify-center'>
         <div className='mx-auto flex w-full max-w-sm flex-col gap-6'>
           <div className='flex flex-col items-center'>
-            <h1 className='text-4xl font-semibold text-zinc-200'>Sign In</h1>
-            <p className='text-sm text-stone-200 mt-2'>
+            <h1 className='text-4xl font-semibold text-zinc-800'>ARCHIP</h1>
+            <p className='text-sm text-stone-800 mt-2'>
               Faça login para acessar sua conta
             </p>
           </div>
 
           <form className='form-group' onSubmit={handleFormSubmit}>
             <div className='form-field'>
-              <label className='form-label'>Endereço de Email</label>
-              
+              <label className='form-label text-zinc-900'>
+                Endereço de Email
+              </label>
+
               <input
                 placeholder='Email'
                 type='email'
                 required
-                className='input max-w-full'
+                className='input max-w-full bg-zinc-100 text-zinc-900'
               />
-              <label className='form-label'>
-                <span className='form-label-alt'>Email válido.</span>
-              </label>
+              
             </div>
+
             <div className='form-field'>
-              <label className='form-label'>Senha</label>
+              <label className='form-label text-zinc-900'>Senha</label>
               <div className='form-control'>
                 <input
                   placeholder='Senha'
                   type='password'
                   required
-                  className='input max-w-full'
+                  className='input max-w-full bg-zinc-100 text-zinc-900'
                 />
               </div>
             </div>
@@ -66,7 +67,7 @@ export default function LoginPage() {
               <div className='form-control justify-between'>
                 <button
                   type='submit'
-                  className='daisy-btn daisy-btn-info w-full'
+                  className='daisy-btn daisy-btn-info w-full rounded-full'
                 >
                   Sign in
                 </button>

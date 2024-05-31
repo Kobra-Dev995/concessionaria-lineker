@@ -41,9 +41,11 @@ export default function Page() {
           </section>
         </section>
 
-        <section className='w-full flex flex-col items-center justify-center'>
+        <section className='w-screen flex flex-col items-center justify-center'>
           <span className='pt-4 text-xl font-semibold'>Promoções</span>
-          <Carroussel />
+          <div className='w-full flex items-center justify-center flex-col px-4'>
+            <Carroussel />
+          </div>
           <span className='daisy-btn-link text-base'>ver mais</span>
         </section>
 

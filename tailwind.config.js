@@ -22,7 +22,7 @@ module.exports = {
   ],
 
   daisyui: {
-    themes: ['light', 'dark', 'cupcake'],
+    themes: ['light', 'dark', 'cupcake', 'bumblebee', 'emerald'],
     darkTheme: 'light',
     prefix: 'daisy-',
   },

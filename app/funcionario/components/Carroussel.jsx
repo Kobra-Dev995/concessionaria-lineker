@@ -1,45 +1,13 @@
-import Image from 'next/image';
+import CarCarroussel from './CarCarroussel';
 
 export default function Carroussel() {
   return (
     <>
       <div className='daisy-carousel w-full'>
-        <div id='item1' className='daisy-carousel-item w-full'>
-          <Image
-            src='/carroPromocao.png'
-            width='420'
-            height='600'
-            alt='Promoção'
-            loading='lazy'
-          />
-        </div>
-        <div id='item2' className='daisy-carousel-item w-full'>
-          <Image
-            src='/carroPromocao.png'
-            width='420'
-            height='600'
-            alt='Promoção'
-            loading='lazy'
-          />
-        </div>
-        <div id='item3' className='daisy-carousel-item w-full'>
-          <Image
-            src='/carroPromocao.png'
-            width='420'
-            height='600'
-            alt='Promoção'
-            loading='lazy'
-          />
-        </div>
-        <div id='item4' className='daisy-carousel-item w-full'>
-          <Image
-            src='/carroPromocao.png'
-            width='420'
-            height='600'
-            alt='Promoção'
-            loading='lazy'
-          />
-        </div>
+        <CarCarroussel ider={1} />
+        <CarCarroussel ider={2} />
+        <CarCarroussel ider={3} />
+        <CarCarroussel ider={4} />
       </div>
 
       <div className='flex justify-center w-full py-2 gap-2'>
