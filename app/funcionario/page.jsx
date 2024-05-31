@@ -3,8 +3,9 @@
 import CarList from './components/CarList';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import Carroussel from './components/Carroussel';
+import Carro from './[carroId]/page';
 
-export default function Page() {
+export default function Funcionario() {
   return (
     <>
       <main className='overflow-hidden bg-stone-100 text-stone-900'>
@@ -57,6 +58,7 @@ export default function Page() {
             Buscar Clientes
           </a>
         </section>
+        
       </main>
     </>
   );
