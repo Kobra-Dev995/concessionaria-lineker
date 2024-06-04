@@ -3,9 +3,40 @@
 import CarList from './components/CarList';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import Carroussel from './components/Carroussel';
-import Carro from './[carroId]/page';
+import { useState } from 'react';
+
+const carsDB = [
+  {
+    id: 1,
+    name: 'BMX A43',
+    price: 800.42,
+    picture: '/arancio-borealis 1 (1).png',
+  },
+  {
+    id: 2,
+    name: 'Monstang M43',
+    price: 820.95,
+    picture: '/2517_4 1 (1).png',
+  },
+  {
+    id: 3,
+    name: 'Silver Master',
+    price: 799.313,
+    picture: '/destaque-v2 1 (1).png',
+  },
+];
 
 export default function Funcionario() {
+  const [searchCar, setSearchCar] = useState('');
+
+  const filterSearchCar = carsDB.filter((car) => {
+    const carLowerCase = car.name.toLowerCase();
+    const searchLower = searchCar.toLowerCase();
+
+    console.log(carLowerCase);
+    return carLowerCase.includes(searchLower);
+  });
+
   return (
     <>
       <main className='overflow-hidden bg-stone-100 text-stone-900'>
@@ -16,29 +47,27 @@ export default function Funcionario() {
                 type='text'
                 className='input-rounded input text-zinc-900 bg-zinc-200 border-x-0 rounded-none '
                 placeholder='Pesquisar Carro'
-                onKeyDown={(teclado) =>
-                  teclado.key == 'Enter' ? console.log('Fez a busca') : false
-                }
+                onKeyDown={(e) => {
+                  e.key === 'Enter'
+                    ? setSearchCar(e.target.value)
+                    : console.log(e.target.value);
+                }}
               />
               <FaMagnifyingGlass className='text-xl' />
             </label>
           </div>
           <section className='flex flex-col items-center gap-4 px-7 '>
-            <CarList
-              Name={`BMX A43`}
-              Price={`R$ 800.420`}
-              Picture={`/arancio-borealis 1 (1).png`}
-            />
-            <CarList
-              Name={`Monstang M43`}
-              Price={`R$ 820.950`}
-              Picture={`/2517_4 1 (1).png`}
-            />
-            <CarList
-              Name={`Silver Master`}
-              Price={`R$ 799.313`}
-              Picture={`/destaque-v2 1 (1).png`}
-            />
+
+            {filterSearchCar.map((car) => {
+              return (
+                <CarList
+                  key={car.id}
+                  Name={car.name}
+                  Price={`R$ ${car.price}`}
+                  Picture={car.picture}
+                />
+              );
+            })}
           </section>
         </section>
 
@@ -58,7 +87,6 @@ export default function Funcionario() {
             Buscar Clientes
           </a>
         </section>
-        
       </main>
     </>
   );

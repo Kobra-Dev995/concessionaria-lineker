@@ -4,10 +4,10 @@ export default function Carroussel() {
   return (
     <>
       <div className='daisy-carousel w-full'>
-        <CarCarroussel ider={1} />
-        <CarCarroussel ider={2} />
-        <CarCarroussel ider={3} />
-        <CarCarroussel ider={4} />
+        <CarCarroussel ider={1} Picture={'/carroPromocao.png'} />
+        <CarCarroussel ider={2} Picture={'/Promoção 2.png'} />
+        <CarCarroussel ider={3} Picture={'/carroPromocao.png'} />
+        <CarCarroussel ider={4} Picture={'/Promoção 2.png'} />
       </div>
 
       <div className='flex justify-center w-full py-2 gap-2'>

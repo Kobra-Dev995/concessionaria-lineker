@@ -1,19 +1,41 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function LoginPage() {
   const router = useRouter();
+  const [error, setError] = useState('');
 
-  function handleFormSubmit(e) {
+  async function DataUsers() {
+    // const Data = await fetch('/cadastros.json');
+    const Data = await fetch('https://jsonplaceholder.typicode.com/users');
+    return Data.json();
+  }
+
+  async function handleFormSubmit(e) {
     e.preventDefault();
+    const usuarios = await DataUsers();
 
     const emailUser = e.target[0].value;
     const senhaUser = e.target[1].value;
 
-    console.log('Email: ', emailUser, '\nSenha: ', senhaUser);
+    usuarios.forEach((user) => {
+      const emailDB = user.email;
+      const senhaDB = user.address?.zipcode.slice(0, 5);
+      console.log(`
+        Email: ${emailDB}
+        Senha: ${senhaDB}
+      `);
 
-    router.replace('/funcionario/');
+      if (emailUser === emailDB) {
+        if (senhaUser === senhaDB) {
+          router.replace('/funcionario/');
+        }
+      }
+
+      setError((prevError) => (prevError = 'Senha ou Email Estão Incorretos'));
+    });
   }
 
   return (
@@ -35,11 +57,10 @@ export default function LoginPage() {
 
               <input
                 placeholder='Email'
-                type='email'
+                type='text'
                 required
                 className='input max-w-full bg-zinc-100 text-zinc-900'
               />
-              
             </div>
 
             <div className='form-field'>
@@ -53,16 +74,16 @@ export default function LoginPage() {
                 />
               </div>
             </div>
-            <div className='form-field'>
-              {/* <div className='form-control justify-between'>
+            {/* <div className='form-field'>
+               <div className='form-control justify-between'>
                 
                 <label className='form-label'>
                   <a className='link link-underline-hover link-primary text-sm'>
                     Forgot your password?
                   </a>
                 </label>
-              </div> */}
-            </div>
+              </div> 
+            </div> */}
             <div className='form-field pt-5'>
               <div className='form-control justify-between'>
                 <button
@@ -74,13 +95,11 @@ export default function LoginPage() {
               </div>
             </div>
 
-            {/* <div className='form-field'>
+            <div className='form-field'>
               <div className='form-control justify-center'>
-                <a className='link link-underline-hover link-primary text-sm'>
-                  Don't have an account yet? Sign up.
-                </a>
+                <span className='daisy-link-error text-sm'>{error}</span>
               </div>
-            </div> */}
+            </div>
           </form>
         </div>
       </main>
