@@ -81,7 +81,7 @@ export default function Funcionario() {
 
         <section className='flex justify-center p-5'>
           <a
-            href='/page/funcionario/clientes/'
+            href='/funcionario/clientes/'
             className='bg-blue-500 text-white font-medium rounded-lg px-6 py-3'
           >
             Buscar Clientes
