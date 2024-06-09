@@ -11,11 +11,11 @@ module.exports = {
         'carro-background': "url('/carrobg.jpg')",
       },
       colors: {
-        'primare-blue': '#B4C8E8',
+        'primare-blue': '#B4C8E8'
       },
       spacing: {
-        negative: '-10rem',
-      },
+        'negative': '-10rem'
+      }
     },
   },
   plugins: [
