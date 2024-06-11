@@ -28,6 +28,8 @@ const carsDB = [
 export default function Carro({ params }) {
   const nameCar = params.carroId.replace(/%20/g, ' ');
 
+  
+
   // carsDB.map((carro) => {
   //   if (carro.name === nameCar) {
   //     console.log('carro:>', carro.name);
@@ -39,7 +41,6 @@ export default function Carro({ params }) {
       <main>
         <section>
           <div className='flex items-center justify-center bg-zinc-100 relative w-full h-40'>
-
             {carsDB.map((carro) => {
               if (carro.name !== nameCar) {
                 return;

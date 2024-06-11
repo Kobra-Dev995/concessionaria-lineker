@@ -20,8 +20,8 @@ export default function CarList({ Name, Price, Picture }) {
         <div className='w-11/12 md:basis-1/4 lg:basis-1/6  flex items-center justify-center'>
           <Image
             src={Picture}
-            width={120}
-            height={120}
+            width={1200}
+            height={1200}
             alt={Name}
             className='basis-full'
           />

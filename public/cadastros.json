@@ -1,5 +1,14 @@
 [
   {
+    "id": 99,
+    "name": "Admin",
+    "username": "admin",
+    "email": "admin",
+    "address": {
+      "zipcode": "20321"
+    }
+  },
+  {
     "id": 1,
     "name": "Leanne Graham",
     "username": "Bret",

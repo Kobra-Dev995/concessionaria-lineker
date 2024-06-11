@@ -8,8 +8,7 @@ export default function LoginPage() {
   const [error, setError] = useState('');
 
   async function DataUsers() {
-    // const Data = await fetch('/cadastros.json');
-    const Data = await fetch('https://jsonplaceholder.typicode.com/users');
+    const Data = await fetch('/cadastros.json');
     return Data.json();
   }
 
@@ -23,19 +22,18 @@ export default function LoginPage() {
     usuarios.forEach((user) => {
       const emailDB = user.email;
       const senhaDB = user.address?.zipcode.slice(0, 5);
+
       console.log(`
         Email: ${emailDB}
         Senha: ${senhaDB}
       `);
 
-      if (emailUser === emailDB) {
-        if (senhaUser === senhaDB) {
-          router.replace('/funcionario/');
-        }
+      if (senhaUser !== senhaDB) {
+        router.replace('/funcionario/');
       }
-
-      setError((prevError) => (prevError = 'Senha ou Email Estão Incorretos'));
     });
+    
+    setError((prevError) => (prevError = 'Senha ou Email Estão Incorretos'));
   }
 
   return (
