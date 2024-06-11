@@ -1,21 +1,60 @@
+'use client';
+
 import Image from 'next/image';
 import TabelaCarro from './companents/Tabela';
 import Link from 'next/link';
 
+const carsDB = [
+  {
+    id: 1,
+    name: 'URUS',
+    price: 4.095,
+    picture: '/arancio-borealis 1 (1).png',
+  },
+  {
+    id: 2,
+    name: 'AUDI A6',
+    price: 133.686,
+    picture: '/2517_4 1 (1).png',
+  },
+  {
+    id: 3,
+    name: 'BMW X6',
+    price: 820.95,
+    picture: '/destaque-v2 1 (1).png',
+  },
+];
+
 export default function Carro({ params }) {
   const nameCar = params.carroId.replace(/%20/g, ' ');
+
+  // carsDB.map((carro) => {
+  //   if (carro.name === nameCar) {
+  //     console.log('carro:>', carro.name);
+  //   }
+  // });
+
   return (
     <>
       <main>
         <section>
           <div className='flex items-center justify-center bg-zinc-100 relative w-full h-40'>
-            <Image
-              src='/arancio-borealis 1 (1).png'
-              width='505'
-              height='220'
-              alt='Carro para comprar'
-              className='absolute pt-[6rem]'
-            />
+
+            {carsDB.map((carro) => {
+              if (carro.name !== nameCar) {
+                return;
+              }
+
+              return (
+                <Image
+                  src={carro.picture}
+                  width='505'
+                  height='220'
+                  alt='Carro para comprar'
+                  className='absolute pt-[6rem]'
+                />
+              );
+            })}
           </div>
           <div className='bg-primare-blue font-bold text-3xl w-full h-48 flex justify-center items-end p-4 pb-14 gap-8'>
             <span>{nameCar}</span>

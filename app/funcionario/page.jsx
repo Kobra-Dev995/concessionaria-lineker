@@ -8,20 +8,20 @@ import { useState } from 'react';
 const carsDB = [
   {
     id: 1,
-    name: 'BMX A43',
-    price: 800.42,
+    name: 'URUS',
+    price: 4.095,
     picture: '/arancio-borealis 1 (1).png',
   },
   {
     id: 2,
-    name: 'Monstang M43',
-    price: 820.95,
+    name: 'AUDI A6',
+    price: 133.686,
     picture: '/2517_4 1 (1).png',
   },
   {
     id: 3,
-    name: 'Silver Master',
-    price: 799.313,
+    name: 'BMW X6',
+    price: 820.95,
     picture: '/destaque-v2 1 (1).png',
   },
 ];
@@ -57,13 +57,12 @@ export default function Funcionario() {
             </label>
           </div>
           <section className='flex flex-col items-center gap-4 px-7 '>
-
             {filterSearchCar.map((car) => {
               return (
                 <CarList
                   key={car.id}
                   Name={car.name}
-                  Price={`R$ ${car.price}`}
+                  Price={`R$ ${car.price.toFixed(3)}`}
                   Picture={car.picture}
                 />
               );
