@@ -28,12 +28,16 @@ export default function LoginPage() {
         Senha: ${senhaDB}
       `);
 
-      if (senhaUser !== senhaDB) {
-        router.replace('/funcionario/');
+      if (emailUser === emailDB) {
+        if (senhaUser === senhaDB) {
+          router.replace('/funcionario/');
+        } else {
+          setError(
+            (prevError) => (prevError = 'Senha ou Email Estão Incorretos')
+          );
+        }
       }
     });
-    
-    setError((prevError) => (prevError = 'Senha ou Email Estão Incorretos'));
   }
 
   return (

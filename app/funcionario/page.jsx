@@ -5,6 +5,7 @@ import { FaMagnifyingGlass } from 'react-icons/fa6';
 import Carroussel from './components/Carroussel';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const carsDB = [
   {
@@ -18,30 +19,6 @@ const carsDB = [
     name: 'AUDI A6',
     price: 133686,
     picture: '/2517_4 1 (1).png',
-  },
-  {
-    id: 3,
-    name: 'BMW X6',
-    price: 982095,
-    picture: '/destaque-v2 1 (1).png',
-  },
-  {
-    id: 3,
-    name: 'BMW X6',
-    price: 982095,
-    picture: '/destaque-v2 1 (1).png',
-  },
-  {
-    id: 3,
-    name: 'BMW X6',
-    price: 982095,
-    picture: '/destaque-v2 1 (1).png',
-  },
-  {
-    id: 3,
-    name: 'BMW X6',
-    price: 982095,
-    picture: '/destaque-v2 1 (1).png',
   },
   {
     id: 3,
@@ -121,17 +98,29 @@ export default function Funcionario() {
 
       <main className='overflow-hidden bg-stone-100 text-stone-900'>
         <section className='w-full'>
-          <div className='w-full flex items-center justify-between p-4'>
-            {/* You can open the modal using document.getElementById('ID').showModal() method */}
-            <button
-              className='daisy-btn bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg px-6 py-3'
-              onClick={() => document.getElementById('my_modal_3').showModal()}
-            >
-              open modal
-            </button>
+          <div className='w-full flex md:flex-row flex-col-reverse gap-4 items-center justify-between p-4'>
+            <section className='flex gap-6 items-center justify-center'>
+              <button
+                className='daisy-btn bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg px-6 py-3'
+                onClick={() =>
+                  document.getElementById('my_modal_3').showModal()
+                }
+              >
+                Promoções
+              </button>
+
+              <section className='flex justify-center p-5'>
+                <Link
+                  href='/funcionario/clientes/'
+                  className='bg-blue-500 text-white font-medium rounded-lg px-6 py-3'
+                >
+                  Buscar Clientes
+                </Link>
+              </section>
+            </section>
 
             <dialog id='my_modal_3' className='daisy-modal'>
-              <div className='daisy-modal-box'>
+              <div className='daisy-modal-box max-w-[30rem] md:max-w-[50rem]'>
                 <form method='dialog'>
                   <button className='daisy-btn daisy-btn-sm daisy-btn-circle daisy-btn-ghost absolute right-2 top-2'>
                     ✕
@@ -139,11 +128,18 @@ export default function Funcionario() {
                 </form>
 
                 <section className=' flex flex-col items-center justify-center'>
-                  <span className='pt-4 text-xl font-semibold'>Promoções</span>
+                  <span className='pt-4 text-xl font-semibold'>
+                    Promoções do Mês
+                  </span>
                   <div className='w-full flex items-center justify-center flex-col px-4'>
                     <Carroussel />
                   </div>
-                  <span className='daisy-btn-link text-base'>ver mais</span>
+                  <Link
+                    href='/funcionario/promocao/'
+                    className='daisy-btn-link text-base'
+                  >
+                    ver mais
+                  </Link>
                 </section>
               </div>
             </dialog>
@@ -175,23 +171,6 @@ export default function Funcionario() {
               );
             })}
           </section>
-        </section>
-
-        <section className='w-screen flex flex-col items-center justify-center'>
-          <span className='pt-4 text-xl font-semibold'>Promoções</span>
-          <div className='w-full flex items-center justify-center flex-col px-4'>
-            <Carroussel />
-          </div>
-          <span className='daisy-btn-link text-base'>ver mais</span>
-        </section>
-
-        <section className='flex justify-center p-5'>
-          <a
-            href='/funcionario/clientes/'
-            className='bg-blue-500 text-white font-medium rounded-lg px-6 py-3'
-          >
-            Buscar Clientes
-          </a>
         </section>
       </main>
     </>
