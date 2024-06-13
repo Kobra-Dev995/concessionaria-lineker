@@ -33,6 +33,8 @@ export default function LoginPage() {
           router.replace('/gerente/');
           return
         }
+
+        
         
         if (senhaUser === senhaDB) {
           router.replace('/funcionario/');

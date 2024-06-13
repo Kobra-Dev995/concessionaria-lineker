@@ -28,12 +28,12 @@ export default function Clientes() {
           <Link
             href={'/funcionario'}
             replace
-            className='daisy-btn daisy-btn-active daisy-btn-secondary bg-blue-800 hover:bg-blue-600 w-40'
+            className='daisy-btn daisy-btn-active daisy-btn-primary bg-blue-800 hover:bg-blue-600 w-40'
           >
             Voltar
           </Link>
         </section>
-        <section className='w-full flex justify-center'>
+        <section className='w-full flex flex-col justify-center'>
           <ClienteList />
         </section>
       </main>

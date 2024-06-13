@@ -9,6 +9,15 @@
     }
   },
   {
+    "id": 98,
+    "name": "Yeridson",
+    "username": "yeridson dev",
+    "email": "yeridson",
+    "address": {
+      "zipcode": "90321"
+    }
+  },
+  {
     "id": 1,
     "name": "Leanne Graham",
     "username": "Bret",

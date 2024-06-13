@@ -30,7 +30,7 @@ export default function Promocao() {
         <Link
           href={'/funcionario'}
           replace
-          className='daisy-btn daisy-btn-active daisy-btn-secondary bg-blue-800 hover:bg-blue-600 w-40'
+          className='daisy-btn daisy-btn-active daisy-btn-primary bg-blue-800 hover:bg-blue-600 w-40'
         >
           Voltar
         </Link>
