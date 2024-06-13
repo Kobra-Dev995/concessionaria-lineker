@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Carroussel from './components/Carroussel';
 import CardFuncaoGerente from './components/CardFuncaoGerente';
 
-
 export default function Gerente() {
   return (
     <>
@@ -42,8 +41,19 @@ export default function Gerente() {
           <Carroussel />
         </div>
 
-        <section>
-          <CardFuncaoGerente />
+        <section className='flex flex-col justify-center gap-6 px-10 mb-8'>
+          <CardFuncaoGerente
+            Name={'Editar Funcionários'}
+            Desc={`Controle total de todos os clientes cadastrados podendo buscar, excluir e cadastrar novos funcionários para a empresa`}
+            Picture={'/Rectangle 15.png'}
+            Path={'/gerente/editarfuncionario'}
+          />
+          <CardFuncaoGerente
+            Name={'Editar Veículos'}
+            Desc={`Controle total de todos os veículos cadastrados podendo buscar, excluir e cadastrar novos veículos`}
+            Picture={'/Rectangle 16.png'}
+            Path={'/gerente/editarVeiculo'}
+          />
         </section>
       </main>
     </>

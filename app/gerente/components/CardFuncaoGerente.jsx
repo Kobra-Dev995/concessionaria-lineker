@@ -3,25 +3,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaAngleRight } from 'react-icons/fa6';
 
-export default function CardFuncaoGerente() {
+export default function CardFuncaoGerente({Name, Desc, Picture, Path}) {
   return (
     <>
-      <div className='daisy-card daisy-card-side bg-base-100 shadow-xl'>
+      <div className='daisy-card daisy-card-side bg-base-100 shadow-xl flex justify-center'>
         <figure>
           <Image
-            src={'/Rectangle 15.png'}
+            src={Picture}
             width={1200}
             height={1200}
             alt='carro'
           />
         </figure>
         <div className='daisy-card-body'>
-          <h2 className='daisy-card-title'>Editar Funcionários</h2>
-          <p>Controle total de todos os clientes cadastrados podendo buscar, excluir e cadastrar novos funcionários para a empresa</p>
-          <div className='daisy-card-actions justify-end'>
-            <Link href={'/gerente/editarfuncionario'}>
-              <FaAngleRight />
-            </Link>
+          <h2 className='daisy-card-title'>{Name}</h2>
+          <p>
+            {Desc}
+          </p>
+          <div className='daisy-card-actions justify-start'>
+            <div className='daisy-btn bg-blue-600'>
+              <Link href={Path} className='flex text-zinc-100'>
+                Editar <FaAngleRight />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
