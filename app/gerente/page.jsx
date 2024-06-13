@@ -24,6 +24,7 @@ export default function Gerente() {
       </header>
 
       <main>
+        <span className='font-semibold text-2xl p-3'>Relatório de carros vendidos</span>
         <div className='daisy-carousel w-full border border-black'>
           <div id='item1' className='daisy-carousel-item w-full'>
             <img src='/Carros vendidos.png' className='w-full' />
