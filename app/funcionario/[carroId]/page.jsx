@@ -28,8 +28,6 @@ const carsDB = [
 export default function Carro({ params }) {
   const nameCar = params.carroId.replace(/%20/g, ' ');
 
-  
-
   // carsDB.map((carro) => {
   //   if (carro.name === nameCar) {
   //     console.log('carro:>', carro.name);
@@ -89,12 +87,19 @@ export default function Carro({ params }) {
           <span className='text-xl font-medium'>R$</span>
         </section>
 
-        <section className='w-full px-4 py-2'>
+        <section className='w-full flex items-center gap-10 px-4 py-2'>
           <Link
             href={`/funcionario/${nameCar}/venda`}
             className='daisy-btn daisy-btn-active daisy-btn-secondary bg-blue-800 hover:bg-blue-600 w-40'
           >
             Comprar
+          </Link>
+          <Link
+            href={'/funcionario'}
+            replace
+            className='daisy-btn daisy-btn-active daisy-btn-secondary bg-red-800 hover:bg-red-600 w-40'
+          >
+            Cancelar
           </Link>
         </section>
       </main>

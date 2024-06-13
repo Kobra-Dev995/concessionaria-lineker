@@ -1,45 +1,51 @@
 'use client';
 
-import Header from './components/Header';
+import Image from 'next/image';
+import Carroussel from './components/Carroussel';
+import CardFuncaoGerente from './components/CardFuncaoGerente';
 
-const cars = ['nome 1', 'nome 2', 'nome 3', 'nome 4'];
 
 export default function Gerente() {
   return (
     <>
-      <Header />
+      <header className='bg-zinc-100 h-20 flex items-center justify-between px-4 py-12'>
+        <div>
+          <Image
+            className='border border-zinc-200 rounded-full'
+            src='/fotoPerfilFuncionario.svg'
+            width='70'
+            height='70'
+            alt='foto perfil'
+            property='true'
+          />
+        </div>
+        <span className='text-xl font-semibold text-zinc-700 tracking-wider mr-3'>
+          ARCHIP
+        </span>
+      </header>
 
-      <h1>Gerente</h1>
-      <h2>Area do gerente</h2>
-
-      <div className='daisy-carousel w-full'>
-        <div id='item1' className='daisy-carousel-item w-full'>
-          <img src='/arancio-borealis 1 (1).png' className='w-full' />
+      <main>
+        <div className='daisy-carousel w-full border border-black'>
+          <div id='item1' className='daisy-carousel-item w-full'>
+            <img src='/Carros vendidos.png' className='w-full' />
+          </div>
         </div>
-        <div id='item2' className='daisy-carousel-item w-full'>
-          <img src='/arancio-borealis 1 (1).png' className='w-full' />
-        </div>
-        <div id='item3' className='daisy-carousel-item w-full'>
-          <img src='/arancio-borealis 1 (1).png' className='w-full' />
-        </div>
-        <div id='item4' className='daisy-carousel-item w-full'>
-          <img src='/arancio-borealis 1 (1).png' className='w-full' />
-        </div>
-      </div>
-      <div className='flex justify-center w-full py-2 gap-2'>
-        <a href='#item1' className='daisy-btn daisy-btn-xs'>
+        <div className='flex justify-center w-full py-2 gap-2'>
+          {/* <a href='#item1' className='daisy-btn daisy-btn-xs'>
           1
-        </a>
-        <a href='#item2' className='daisy-btn daisy-btn-xs'>
-          2
-        </a>
-        <a href='#item3' className='daisy-btn daisy-btn-xs'>
-          3
-        </a>
-        <a href='#item4' className='daisy-btn daisy-btn-xs'>
-          4
-        </a>
-      </div>
+          </a> */}
+        </div>
+        <section className='w-full flex justify-center'>
+          <span className='font-semibold text-3xl'>Promoções</span>
+        </section>
+        <div className='w-full flex items-center justify-center flex-col px-4'>
+          <Carroussel />
+        </div>
+
+        <section>
+          <CardFuncaoGerente />
+        </section>
+      </main>
     </>
   );
 }

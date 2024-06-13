@@ -29,6 +29,11 @@ export default function LoginPage() {
       `);
 
       if (emailUser === emailDB) {
+        if (emailUser ===  'admin') {
+          router.replace('/gerente/');
+          return
+        }
+        
         if (senhaUser === senhaDB) {
           router.replace('/funcionario/');
         } else {
