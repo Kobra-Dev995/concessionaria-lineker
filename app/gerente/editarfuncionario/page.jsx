@@ -32,6 +32,8 @@ export default function EditarFuncionario() {
           >
             Voltar
           </Link>
+
+          
         </section>
         <section className='w-full flex justify-center'>
           <ClienteList />

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Carroussel from './components/Carroussel';
 import CardFuncaoGerente from './components/CardFuncaoGerente';
+import Link from 'next/link';
 
 export default function Gerente() {
   return (
@@ -24,7 +25,9 @@ export default function Gerente() {
       </header>
 
       <main>
-        <span className='font-semibold text-2xl p-3'>Relatório de carros vendidos</span>
+        <span className='font-semibold text-2xl p-3'>
+          Relatório de carros vendidos
+        </span>
         <div className='daisy-carousel w-full border border-black'>
           <div id='item1' className='daisy-carousel-item w-full'>
             <img src='/Carros vendidos.png' className='w-full' />
@@ -41,6 +44,9 @@ export default function Gerente() {
         <div className='w-full flex items-center justify-center flex-col px-4'>
           <Carroussel />
         </div>
+        <section>
+          <Link href='/gerente/editarPromocao' className='daisy-link link-underline '>ver mais</Link>
+        </section>
 
         <section className='flex flex-col justify-center gap-6 px-10 mb-8'>
           <CardFuncaoGerente
