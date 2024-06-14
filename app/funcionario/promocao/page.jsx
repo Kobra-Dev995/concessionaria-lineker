@@ -73,7 +73,10 @@ export default function Promocao() {
                   Promoção Finaliza: <span>20/07/2024</span>
                 </p>
                 <div className='daisy-card-actions justify-end'>
-                  <Link href={`./${carro.name}`} className='daisy-btn daisy-btn-primary'>
+                  <Link
+                    href={`./editarVeiculo/${carro.name}`}
+                    className='daisy-btn daisy-btn-primary'
+                  >
                     Comprar Agora
                   </Link>
                 </div>
