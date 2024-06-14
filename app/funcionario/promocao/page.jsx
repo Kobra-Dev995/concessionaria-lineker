@@ -4,6 +4,27 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
+const carsDB = [
+  {
+    id: 1,
+    name: 'URUS',
+    price: 4.095,
+    picture: '/arancio-borealis 1 (1).png',
+  },
+  {
+    id: 2,
+    name: 'AUDI A6',
+    price: 133.686,
+    picture: '/2517_4 1 (1).png',
+  },
+  {
+    id: 3,
+    name: 'BMW X6',
+    price: 820.95,
+    picture: '/destaque-v2 1 (1).png',
+  },
+];
+
 export default function Promocao() {
   const [carrosAPI, setCarrosAPI] = useState([]);
 
@@ -19,6 +40,7 @@ export default function Promocao() {
 
   useEffect(() => {
     return () => {
+      console.log('busca');
       handleClick();
     };
   }, []);
@@ -54,7 +76,7 @@ export default function Promocao() {
           </div>
         </div> */}
 
-        {carrosAPI.map((carro) => {
+        {carsDB.map((carro) => {
           return (
             <div className='daisy-card w-96 bg-base-100 shadow-xl'>
               <figure>
