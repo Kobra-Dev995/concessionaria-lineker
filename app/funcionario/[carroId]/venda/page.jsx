@@ -7,7 +7,7 @@ export default function Venda() {
       <main className='overflow-hidden'>
         <section className='w-full flex items-center justify-center m-4'>
           <Image
-            src={'/comprovante.png'}
+            src={'/Desktop - 5.png'}
             width={1000}
             height={1020}
             alt='compra'

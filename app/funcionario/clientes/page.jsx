@@ -25,7 +25,7 @@ export default function Clientes() {
         </span>
       </header>
       <main>
-        <section className='flex flex-col items-center gap-4 px-7 '>
+        <section className='flex flex-col items-center gap-4 px-7 m-8'>
           <h1 className='text-2xl'>Clientes</h1>
         </section>
         <section className='w-full flex items-center justify-between mt-4 px-32'>
@@ -51,8 +51,8 @@ export default function Clientes() {
             <FaMagnifyingGlass className='text-xl' />
           </label>
         </section>
-        <section className='w-full flex flex-col justify-center'>
-          <ClienteList  variavel={searchClient} />
+        <section className='w-full flex flex-col justify-center gap-6 m-8'>
+          <ClienteList variavel={searchClient} />
         </section>
       </main>
     </>

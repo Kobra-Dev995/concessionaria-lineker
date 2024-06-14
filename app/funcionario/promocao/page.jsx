@@ -96,7 +96,7 @@ export default function Promocao() {
                 </p>
                 <div className='daisy-card-actions justify-end'>
                   <Link
-                    href={`./editarVeiculo/${carro.name}`}
+                    href={`/funcionario/${carro.name}`}
                     className='daisy-btn daisy-btn-primary'
                   >
                     Comprar Agora

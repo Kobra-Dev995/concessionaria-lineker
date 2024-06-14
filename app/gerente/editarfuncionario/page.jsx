@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import Link from 'next/link';
 import FuncionarioList from './components/FuncionarioList';
@@ -26,7 +26,7 @@ export default function EditarFuncionario() {
         </span>
       </header>
       <main>
-        <section className='flex flex-col items-center gap-4 px-7 '>
+        <section className='flex flex-col items-center gap-4 px-7 m-4'>
           <h1 className='text-2xl'>Funcionários</h1>
         </section>
         <section className='w-full flex items-center justify-between mt-4 px-32'>
@@ -52,8 +52,8 @@ export default function EditarFuncionario() {
             <FaMagnifyingGlass className='text-xl' />
           </label>
         </section>
-        <section className='w-full flex flex-col justify-center'>
-          <FuncionarioList list={searchClient}/>
+        <section className='w-full flex flex-col justify-center m-8 gap-4'>
+          <FuncionarioList list={searchClient} />
         </section>
       </main>
     </>
