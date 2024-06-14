@@ -44,7 +44,7 @@ export default function Gerente() {
         <div className='w-full flex items-center justify-center flex-col px-4'>
           <Carroussel />
         </div>
-        <section>
+        <section className='m-8'>
           <Link href='/gerente/editarPromocao' className='daisy-link link-underline flex justify-center'>ver mais</Link>
         </section>
 
