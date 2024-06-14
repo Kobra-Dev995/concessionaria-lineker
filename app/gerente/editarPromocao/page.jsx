@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 export default function EditarPromocao() {
   const [carrosAPI, setCarrosAPI] = useState([]);
@@ -26,27 +27,27 @@ export default function EditarPromocao() {
   return (
     <>
       <h6 className='text-center font-semibold text-2xl'>Promoção</h6>
-      <section className='w-full flex items-center justify-end mt-4 px-28'>
+      <section className='w-full flex items-center justify-between mt-4 px-28'>
         <Link
-          href={'/funcionario'}
+          href={'/gerente'}
           replace
           className='daisy-btn daisy-btn-active daisy-btn-secondary bg-blue-800 hover:bg-blue-600 w-40'
         >
           Voltar
         </Link>
-        <label className='input-rounded input flex items-center gap-2 bg-zinc-200 text-zinc-900'>
+        {/* <label className='input-rounded input flex items-center gap-2 bg-zinc-200 text-zinc-900'>
           <input
             type='text'
             className='input-rounded input text-zinc-900 bg-zinc-200 border-x-0 rounded-none '
             placeholder='Pesquisar Carro'
             onKeyDown={(e) => {
               e.key === 'Enter'
-                ? setSearchCar(e.target.value)
+                ? setCarrosAPI(e.target.value)
                 : console.log(e.target.value);
             }}
           />
           <FaMagnifyingGlass className='text-xl' />
-        </label>
+        </label> */}
       </section>
       <section className='flex flex-wrap w-full justify-center gap-12 p-4'>
         {/* <div className='daisy-card w-96 bg-base-100 shadow-xl'>
@@ -87,7 +88,7 @@ export default function EditarPromocao() {
                 </p>
                 <div className='daisy-card-actions justify-end'>
                   <Link
-                    href={`./${carro.name}`}
+                    href={`./editarVeiculo/${carro.name}`}
                     className='daisy-btn daisy-btn-primary'
                   >
                     Comprar Agora

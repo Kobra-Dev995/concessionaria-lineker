@@ -1,8 +1,9 @@
 'use client';
 import Image from 'next/image';
 import { FaPen, FaPhone } from 'react-icons/fa6';
-import ClienteUser from './ClienteUser';
+
 import { useState } from 'react';
+import ClienteUser from './FuncionarioUser';
 
 const clientesDB = [
   {
@@ -31,10 +32,10 @@ const clientesDB = [
   },
 ];
 
-export default function ClienteList({ variavel }) {
+export default function FuncionarioList({ list }) {
   const filterSearchClient = clientesDB.filter((people) => {
     const clientLowerCase = people.name.toLowerCase();
-    const searchLower = variavel.toLowerCase();
+    const searchLower = list.toLowerCase();
 
     console.log(clientLowerCase);
     return clientLowerCase.includes(searchLower);
